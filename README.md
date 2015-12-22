@@ -35,6 +35,6 @@ CiCc_Jf_Temp - Assumes a mesophyll conductance limitaion,
            there is an Arrhenius style temperature dependency on parameters.
            
 
-_Model provides a model text for implimantions in rjags
+_Model provides a model text for implementation in rjags
 
-_Script provides how models are implimented and how diagnistics are conducted.
+_Script provides model implementatation on A/Ci data and diagnostics.
