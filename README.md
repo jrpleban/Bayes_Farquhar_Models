@@ -41,12 +41,19 @@ _Script provides model implementatation on A/Ci data and some diagnostics.
 
 
 Key References
+
 Original Model:
+
 Farquhar, G.D., Caemmerer, S. V. and Berry, J. A. (1980) A biochemical model of photosynthetic CO2 assimilation in leaves of C3 species. Planta, 149, 78-90.
+
 On incorporation mesophyll conductance:
+
 Ethier G.J. & Livingston N.J. (2004) On the need to incorporate sensitivity to CO2 transfer conductance into the Farquhar–von Caemmerer–Berry leaf photosynthesis model. Plant, Cell & Environment, 27, 137-153.
+
 Similar  Bayesian Implimentation:
+
 Patrick L.D., Ogle K. & Tissue D.T. (2009) A hierarchical Bayesian approach for estimation of photosynthetic parameters of C3 plants. Plant, Cell & Environment, 32, 1695-1709.
+
 
 
 
