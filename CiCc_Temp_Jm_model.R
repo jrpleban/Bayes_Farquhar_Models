@@ -14,7 +14,34 @@ mu.A[i] <- min(Ac[i], Aj[i])
 ##     Y = f(Y25, Ee, Tobs) = Y25 * exp (-----------------------)
 #                                          ( 298 * R * Tobs)
 
-farQ_CiCc_Jm_temp.R(cbind(),)
+gammaS[i] <- gammaS25*exp((T[i]-Tref)*EgammaS/(Kref*R*K[i]))
+Rd[i] <- Rd25* exp((T[i]-Tref)*ERd/(Kref*R*K[i]))
+Kc[i] <- Kc25*exp((T[i]-Tref)*EKc/(Kref*R*K[i]))
+Ko[i] <- Ko25*exp((T[i]-Tref)*EKo/(Kref*R*K[i]))
+Vcmax[i] <- Vcmax25*exp((T[i]-Tref)*EVcmax/(Kref*R*K[i]))
+Jmax[i] <- Jmax25*exp((T[i]-Tref)*EJmax/(Kref*R*K[i]))
+gm[i] <- gm25*exp((T[i]-Tref)*Egm/(Kref*R*K[i]))
+#### electron transport
+Ji[i] <- (Q[i] * phiJ*.85)
+bb[i] <- -Ji[i] -Jmax[i]
+cc[i] <- Ji[i]*Jmax[i]
+bac[i]<-(bb[i]^2)-(4*thetaJ*cc[i])
+Jm[i]<- (-bb[i]-sqrt(bac[i]))/(2*thetaJ)
+
+#quadratic solution for net A if limited by Rubisco
+a1[i]<-(-1/gm[i])
+b1[i]<-((Vcmax[i]-Rd[i])/gm[i])+(CiP[i]+(Kc[i]*((1+O[i])/Ko[i] )))
+c1[i]<-Rd[i]*(CiP[i]+(Kc[i]*((1+O[i])/Ko[i] )))-Vcmax[i]*(CiP[i]-gammaS[i])
+bac1[i]<-(b1[i]^2)-(4*a1[i]*c1[i])
+Ac[i]<- (-b1[i]+sqrt(bac1[i]))/(2*a1[i])
+
+# quadratic solution for net A if limited by light (RuBP regeneration)
+a2[i]<-(-1.0/gm[i])
+b2[i]<-(((Jm[i]/4)-Rd[i])/gm[i]) + CiP[i]+2*gammaS[i]
+c2[i]<-(Rd[i]*(CiP[i]+2*gammaS[i])) -((Jm[i]/4)*(CiP[i]-gammaS[i]))
+bac2[i]<-(b2[i]^2)-(4*a2[i]*c2[i])
+Aj[i]<- (-b2[i]+sqrt(bac2[i]))/(2*a2[i])
+
 
 }
 ### Activation Energy Prior for Arrhenius Temp Functions
