@@ -30,10 +30,10 @@ c2[i]<-(Rd*(CiP[i]+2*gammaS)) -((Jm[i]/4)*(CiP[i]-gammaS))
 bac2[i]<-(b2[i]^2)-(4*a2[i]*c2[i])
 Aj[i]<- (-b2[i]+sqrt(bac2[i]))/(2*a2[i])
 }
-### nromal prior from Agricultural Species WULLSCHLEGER
-Vcmax ~ dnorm(90, 0.000625)  T(0,100000)
-### normal prior Dark Respiration from LR data (umol m-2 s-1)
-Rd ~ dunif(0, 25)
+### normal prior from Agricultural Species WULLSCHLEGER (1993)
+Vcmax ~ dnorm(90, 0.000625)T(0,100000)  ## Truncated at extremes to ease computation
+### normal prior Dark Respiration (umol m-2 s-1)
+Rd ~ dnorm (1.17, 2.5)
 ### normal prior centered on 0  for mesophyl cond (umol m-2 s-1 Pa-1)
 gm ~ dnorm(2.5, 0.0025)T(0,142)
 ### prior on gamma star (Pa)
