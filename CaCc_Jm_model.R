@@ -32,16 +32,16 @@ Aj[i]<- (-b2[i]+sqrt(bac2[i]))/(2*a2[i])
 
 
 }
-### nromal prior from Agricultural Species WULLSCHLEGER
-Vcmax ~ dnorm(90, 0.000625)T(0,100000)
+### normal prior from Agricultural Species WULLSCHLEGER
+Vcmax ~ dnorm(90, 0.000625)T(0,100000)  ## Truncated at extremes to ease computation
 ### normal prior Dark Respiration from LR data (umol m-2 s-1)
-Rd ~ dunif(0, 25)
+Rd ~ dnorm (1.17, 2.5)
 ### prior on gamma star (Pa)
 gammaS ~ dnorm(3.86,0.0625)T(0,142)
 # curvature parameter on LR curve (thetaJ)
 thetaJ ~ dunif(0.1, 0.9999)
-### nromal prior from Agricultural Species WULLSCHLEGER
-Jmax ~ dnorm(171,0.000308)T(0,100000)
+### normal prior from Agricultural Species WULLSCHLEGER
+Jmax ~ dnorm(171,0.000308)T(0,100000) 
 ## quantum yield phiJ from theoretical limits
 phiJ ~ dunif(0,.5)
 Kc ~ dnorm(27.24,0.01)T(0, 100)
