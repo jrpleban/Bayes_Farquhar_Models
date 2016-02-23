@@ -32,9 +32,9 @@ Aj[i]<- (-b2[i]+sqrt(bac2[i]))/(2*a2[i])
 
 
 }
-### normal prior from Agricultural Species WULLSCHLEGER
+### normal prior from Agricultural Species WULLSCHLEGER (1993)
 Vcmax ~ dnorm(90, 0.000625)T(0,100000)  ## Truncated at extremes to ease computation
-### normal prior Dark Respiration from LR data (umol m-2 s-1)
+### normal prior Dark Respiration  (umol m-2 s-1)
 Rd ~ dnorm (1.17, 2.5)
 ### prior on gamma star (Pa)
 gammaS ~ dnorm(3.86,0.0625)T(0,142)
