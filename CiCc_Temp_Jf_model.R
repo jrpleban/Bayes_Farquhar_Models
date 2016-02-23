@@ -44,8 +44,12 @@ EKc ~ dnorm(70.4,0.0025)
 EKo ~ dnorm(36.0,0.0025)
 EVcmax ~ dnorm(65.4, 0.0025)
 Egm ~ dnorm(49.6, 0.001)
-### normal prior Dark Respiration from Brassica LR data (umol m-2 s-1)
-Rd25 ~ dunif(0, 25)
+
+
+### normal prior from Agricultural Species WULLSCHLEGER (1993)
+Vcmax25 ~ dnorm(90, 0.000625)T(0,100000)  ## Truncated at extremes to ease computation
+### normal prior Dark Respiration (umol m-2 s-1)
+Rd25 ~ dnorm (1.17, 2.5)
 ### normal prior centered on 0  for mesophyl cond (umol m-2 s-1 Pa-1)
 gm25 ~ dnorm(2.5,0.0025)T(0,142)
 ### prior on gamma star (Pa)
@@ -54,8 +58,7 @@ gammaS25 ~ dnorm(3.74, 4)T(.24,7.23)
 Kc25 ~ dnorm(27.24,0.01)T(0,100)
 ###  prior for Ko(Pa)
 Ko25 ~ dnorm(30400, 0.00000004)T(0,65400)
-### normal prior from Agricultural Species WULLSCHLEGER  (umol m-2 s-1) (1993)
-Vcmax25 ~ dnorm(90, 0.000625)T(0,100000)
+
 ### prior on precision
 tau ~ dgamma(.001 , .001)}
 " 
