@@ -55,6 +55,15 @@ Similar Bayesian Implimentation:
 Patrick L.D., Ogle K. & Tissue D.T. (2009) A hierarchical Bayesian approach for estimation of photosynthetic parameters of C3 plants. Plant, Cell & Environment, 32, 1695-1709.
 
 
+It you use these models please cite my forthcoming publication, anticipated submission to PCE
+
+Identification of genotype specific photosynthetic traits in Brassica rapa using a multi-model Bayesian evaluation.
+Pleban, J. R.1; Mackay, D. S.1; Aston, T.2; Ewers, B. E.2; Wienig, C.2
+1-Geography, University at Buffalo, Buffalo, NY, USA 
+2-Botany, University of Wyoming, Laramie, WY, USA
+
+
+
 
 
 
